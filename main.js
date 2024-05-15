@@ -11,12 +11,11 @@ questionHeaders.forEach((header, index) => {
 		if (answer.style.display === 'block') {
 			answer.style.display = 'none';
 			header.querySelector('.plus').classList.remove('hidden');
-			header.querySelector('.minus').classList.add('hidden');
+			header.querySelector('.minus').style.display = 'none'
 		} else {
 			answer.style.display = 'block';
 			header.querySelector('.plus').classList.add('hidden');
-
-			
+			header.querySelector('.minus').style.display = 'block'
 		}
 	};
 
