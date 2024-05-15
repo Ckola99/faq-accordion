@@ -1,0 +1,212 @@
+/* CSS  */
+
+@font-face {
+	font-family: "Work Sans";
+	src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf)
+		format("truetype");
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+:root {
+	--white: hsl(0, 0%, 100%);
+	--light-pink: hsl(275, 100%, 97%);
+	--grayish-purple: hsl(292, 16%, 49%);
+	--dark-purple: hsl(292, 42%, 14%);
+}
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+	margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	background-image: url(./assets/images/background-pattern-desktop.svg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: contain;
+	background-color: var(--light-pink);
+	font-family: "";
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+	isolation: isolate;
+}
+
+/*  */
+
+.faq-container {
+	background-color: var(--white);
+	border-radius: 0.5rem;
+	padding: 20px;
+	font-family: "Work Sans";
+	max-width: 350px;
+	margin-top: -80px;
+}
+
+.heading {
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	margin-bottom: 20px;
+	font-size: 0.95rem;
+}
+
+.icon {
+	margin-right: 15px;
+	height: 22px;
+	width: 22px;
+}
+
+.question-box-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 17px;
+}
+
+.question-box-header h2 {
+	font-size: 0.65rem;
+  margin-right: 20px;
+}
+
+.answer {
+	color: var(--grayish-purple);
+	font-size: 0.58rem;
+	max-width: 400px;
+}
+
+.icon-box {
+	display: flex;
+}
+
+.icon-box img {
+	height: 18px;
+	width: 18px;
+}
+
+hr {
+	margin: 15px 0;
+	color: lightgray;
+	opacity: 10%;
+}
+
+.plus {
+	cursor: pointer;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+}
+
+.minus {
+	cursor: pointer;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+	display: none;
+}
+
+.answer {
+	display: none;
+}
+
+.question-box-header:hover {
+	color: rgb(187, 15, 202);
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+/* footer section */
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 480px) {
+	body {
+		background-image: url(./assets/images/background-pattern-mobile.svg);
+	}
+
+
+}
+
+@media only screen and (max-width: 350px) {
+	body {
+		padding: 30px;
+		margin-top: 50px;
+	}
+
+
+}
+
+@media only screen and (min-width: 1000px) {
+	body {
+		padding: 30px;
+		margin-top: 50px;
+	}
+}
