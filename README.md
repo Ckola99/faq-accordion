@@ -39,8 +39,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://ckola99.github.io/faq-accordion/)
 
 ## My process
 
@@ -49,61 +48,75 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This project got me to learn about implementing focus using javascript and what the tab index is all about. I also reinforced my knowledge about DOM manipulation using querySelector and other methods.
 
-To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+I'm impressed with the below code because I used methods to manipulate the DOM and understood everything happening in this code.
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+const answer = header.nextElementSibling;
+
+	// Function to toggle answer visibility
+	const toggleAnswer = () => {
+		if (answer.style.display === 'block') {
+			answer.style.display = 'none';
+			header.querySelector('.plus').classList.remove('hidden');
+			header.querySelector('.minus').style.display = 'none'
+		} else {
+			answer.style.display = 'block';
+			header.querySelector('.plus').classList.add('hidden');
+			header.querySelector('.minus').style.display = 'block'
+		}
+	};
+
+	// Click event listener for mouse interaction
+	header.addEventListener('click', toggleAnswer);
+
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+The next part of my js code was interesting as I had to learn how to navigate the tabbable elements. This code was interesting and I learned a new pattern to tab elements.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+
+```js
+// Keyboard event listener for navigating and toggling answers
+	header.addEventListener('keydown', event => {
+		if (event.key === 'Enter' || event.key === ' ') {
+			// Toggle answer visibility
+			toggleAnswer();
+		} else if (event.key === 'ArrowUp') {
+			// Move to previous question
+			const prevIndex = index === 0 ? questionHeaders.length - 1 : index - 1;
+			questionHeaders[prevIndex].focus();
+		} else if (event.key === 'ArrowDown') {
+			// Move to next question
+			const nextIndex = index === questionHeaders.length - 1 ? 0 : index + 1;
+			questionHeaders[nextIndex].focus();
+		}
+	});
+
+	// Add tabindex attribute to make question headers focusable
+	header.setAttribute('tabindex', '0');
+```
+
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I was a bit dependent on chatgpt and would like to get better at writing and visualizing myself through reading the MDN docs and being able to wite and plan better. I also struggle a bit without the exact files of design I would like to be more confident in my design. I also would need to improve my semantic HTML.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Chatgpt](https://www.chatgpt.com) - This helped me solve some small issues and discover what to use like the tab index.
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) - MDN docs are a wealth of knowledge and helped me understand my code a bit better and use the right methods.
+- [W3schools](https://www.w3schools.com/howto/howto_js_accordion.asp) - This site helped me see if I was correctly structuring my faq accordion.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@Ckola99](https://www.frontendmentor.io/profile/Ckola99)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+No acknowledgements this time.
