@@ -39,7 +39,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://ckola99.github.io/faq-accordion/)
+- Live Site URL: [Live site URL here](https://ckola99.github.io/faq-accordion/)
 
 ## My process
 
